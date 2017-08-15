@@ -1,11 +1,11 @@
 
-# Introduction
+## Introduction
 
 This program scrapes analyst estimates from Yahoo Finance and stores them in
 a database for each ticker.
 
 
-# Program Set-Up
+## Program Set-Up
 
 This application should be installed using setup.py. From inside the main repo,
 run the command in the terminal:
@@ -14,7 +14,7 @@ python setup.py develop
 ```
 
 
-# Running Program
+## Running Program
 
 This application is designed to be run from the command line. After the
 project is installed, at the command line type:
