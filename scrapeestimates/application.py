@@ -63,7 +63,7 @@ class Application():
             symbols = Tickers()
             symbols.get_ticker_list()
             tickers = symbols.ticker_list
-        tickers = ['MRK']   # do a test ticker to make sure working
+        # tickers = ['MRK', 'JNJ', 'FIVE']
         # print(tickers)
 
         error_list = []

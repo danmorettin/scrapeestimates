@@ -59,18 +59,18 @@ class Scraper():
 
     def _parse_estimates(self):
         last_year_eps = self.parser_estimates.xpath(
-            '//span[@data-reactid="85"]/text()')[0]
+            '//span[@data-reactid="103"]/text()')[0]
         current_year_eps = self.parser_estimates.xpath(
-            '//span[@data-reactid="52"]/text()')[0]
+            '//span[@data-reactid="58"]/text()')[0]
         next_year_eps = self.parser_estimates.xpath(
-            '//span[@data-reactid="54"]/text()')[0]
+            '//span[@data-reactid="61"]/text()')[0]
 
         last_year_rev = self.parser_estimates.xpath(
-            '//span[@data-reactid="166"]/text()')[0]
+            '//span[@data-reactid="204"]/text()')[0]
         current_year_rev = self.parser_estimates.xpath(
-            '//span[@data-reactid="133"]/text()')[0]
+            '//span[@data-reactid="159"]/text()')[0]
         next_year_rev = self.parser_estimates.xpath(
-            '//span[@data-reactid="135"]/text()')[0]
+            '//span[@data-reactid="162"]/text()')[0]
 
         EPS_GROWTH_INDEX = 16
         eps_growth = self.parser_estimates.xpath(
@@ -114,7 +114,7 @@ class Scraper():
 
 
 def _test():
-    ticker = 'AAPL'       # 'MRK', 'BAM-A.TO', 'TRI.TO'
+    ticker = 'TSLA'       # 'MRK', 'BAM-A.TO', 'TRI.TO'
     print('Downloading data for {}'.format(ticker))
     test_data = Scraper(ticker)
     test_data.scrape()
