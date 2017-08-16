@@ -1,5 +1,5 @@
 
-""" python setup.py install or python setup.py develop """
+""" to allow 'python setup.py develop' at the command line """
 
 from setuptools import setup, find_packages
 

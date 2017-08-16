@@ -12,7 +12,9 @@ run the command in the terminal:
 ```bash
 python setup.py develop
 ```
-
+Note that the filenames for the logs, tickers, and databases are hard-coded in
+so you can call the program from any directory. Update them to your actual
+locations.
 
 ## Running Program
 
@@ -21,7 +23,7 @@ project is installed, at the command line type:
 ```bash
 scrapeestimates
 ```
-if you want to scrape all the items in a list, or
+which will scrape all the tickers in a list, or
 ```bash
 scrapeestimates TSLA
 ```
@@ -38,7 +40,17 @@ python bin/cli.py TSLA
 ```
 If you get warnings from this, you didn't do the program set-up right.
 
+The list of tickers to be used is built in *tickers.py*. Edit as desired.
+
+The app will create a sqlite3 database for each ticker, and will add another
+row each day you run it.
+
+The app also creates logs that show the success of each ticker. Any failed
+tries can be redone using the commands above for single tickers.
+
+## Testing
+
 Test discovery is done from inside the main repo by running the command
 ```bash
-py.test
+pytest -v
 ```
