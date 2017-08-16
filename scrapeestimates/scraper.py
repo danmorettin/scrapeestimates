@@ -1,9 +1,6 @@
 
-"""scraper.py
-
-This module scrapes the analyst estimates from Yahoo Finance and the number
-of shares outstanding from Reuters.
-"""
+"""This module scrapes the analyst estimates from Yahoo Finance and the number
+of shares outstanding from Reuters."""
 
 import requests
 from lxml import html

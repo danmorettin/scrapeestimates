@@ -1,8 +1,5 @@
 
-"""tickers.py
-
-This module compiles a list of stock tickers from csv files.
-"""
+"""This module compiles a list of stock tickers from csv files."""
 
 import pandas
 from os import path, getcwd

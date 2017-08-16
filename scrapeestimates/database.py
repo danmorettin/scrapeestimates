@@ -1,8 +1,5 @@
 
-"""database.py
-
-This module contains a database manager that acts as an ORM.
-"""
+"""This module contains a database manager that acts as an ORM."""
 
 import pandas
 import sqlite3

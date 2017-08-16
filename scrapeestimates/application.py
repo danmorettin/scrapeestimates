@@ -1,5 +1,5 @@
 
-"""application.py
+"""This is the main module for the Scrape Estimates Application.
 
 This module does two things: 1) abstracts the application into a class, and
 2) provides the main entry point for the application.

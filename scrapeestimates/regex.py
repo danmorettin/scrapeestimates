@@ -1,9 +1,6 @@
 
-"""scraper.py
-
-This module parses the analyst estimates (e.g. Revenue = 7.2B) from strings
-to floats.
-"""
+"""This module parses the analyst estimates (e.g. Revenue = 7.2B) from strings
+to floats."""
 
 import re
 
