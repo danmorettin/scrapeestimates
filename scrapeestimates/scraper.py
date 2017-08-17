@@ -64,7 +64,6 @@ class Scraper():
             '//span[@data-reactid="58"]/text()')[0]
         next_year_eps = self.parser_estimates.xpath(
             '//span[@data-reactid="61"]/text()')[0]
-
         last_year_rev = self.parser_estimates.xpath(
             '//span[@data-reactid="204"]/text()')[0]
         current_year_rev = self.parser_estimates.xpath(
@@ -85,8 +84,8 @@ class Scraper():
         data['next_year_eps'] = next_year_eps
         data['eps_growth'] = eps_growth
 
-        # print(data)
-        self.data = self._parse_data(data)
+        data = self._parse_data(data)
+        self.data = data
 
     def _parse_data(self, data):
         try:
