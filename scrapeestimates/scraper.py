@@ -59,17 +59,17 @@ class Scraper():
 
     def _parse_estimates(self):
         last_year_eps = self.parser_estimates.xpath(
-            '//span[@data-reactid="103"]/text()')[0]
+            '//span[@data-reactid="102"]/text()')[0]
         current_year_eps = self.parser_estimates.xpath(
-            '//span[@data-reactid="58"]/text()')[0]
+            '//span[@data-reactid="57"]/text()')[0]
         next_year_eps = self.parser_estimates.xpath(
-            '//span[@data-reactid="61"]/text()')[0]
+            '//span[@data-reactid="60"]/text()')[0]
         last_year_rev = self.parser_estimates.xpath(
-            '//span[@data-reactid="204"]/text()')[0]
+            '//span[@data-reactid="203"]/text()')[0]
         current_year_rev = self.parser_estimates.xpath(
-            '//span[@data-reactid="159"]/text()')[0]
+            '//span[@data-reactid="158"]/text()')[0]
         next_year_rev = self.parser_estimates.xpath(
-            '//span[@data-reactid="162"]/text()')[0]
+            '//span[@data-reactid="161"]/text()')[0]
 
         EPS_GROWTH_INDEX = 16
         eps_growth = self.parser_estimates.xpath(
@@ -84,7 +84,13 @@ class Scraper():
         data['next_year_eps'] = next_year_eps
         data['eps_growth'] = eps_growth
 
-        data = self._parse_data(data)
+        try:
+            data = self._parse_data(data)
+        except:
+            current_year_eps = self.parser_estimates.xpath(
+                '//span[@data-reactid="58"]/text()')[1]
+            data['current_year_eps'] = current_year_eps
+            data = self._parse_data(data)
         self.data = data
 
     def _parse_data(self, data):
@@ -113,9 +119,15 @@ class Scraper():
 
 
 def _test():
-    ticker = 'TSLA'       # 'MRK', 'BAM-A.TO', 'TRI.TO'
+    ticker = 'AAPL'       # 'MRK', 'BAM-A.TO', 'TRI.TO'
     print('Downloading data for {}'.format(ticker))
     test_data = Scraper(ticker)
+    print('Successfully instantiated class.')
+    # test_data._download_estimates()
+    # test_data._download_estimates()
+    # test_data._download_shares()
+    # test_data._parse_shares()
+    # test_data._parse_estimates()
     test_data.scrape()
     print(test_data.scraped_data)
 
